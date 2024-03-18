@@ -1,0 +1,550 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  .galvani-header-logo {
+    width: 86px;
+    padding: 11px;
+    border-radius: 25%;
+    margin: 4px;
+    position: absolute;
+    top: 0px;
+    /* background: grey; */
+    border: 2px solid grey;
+  }
+  .container {
+    position: relative;
+    text-align: center;
+    margin-top: 275px;  
+  }
+  .correlated {
+    height: 404px;
+    width: 100%;
+    display: block;
+  }
+  .circle {
+    position: absolute;
+    width: 400px; /* Adjust size as needed */
+    height: 400px; /* Adjust size as needed */
+    background-color: transparent;
+    border: 4px solid black;
+    border-radius: 50%;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .satisfaction {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    background-color: white; /* Make the text color white */
+    z-index: 1;
+  }
+  .satisfaction > div {
+    margin: 0px -15px 0px 22px;
+  }
+  .satisfaction > div:not(:last-child):after {
+    content: '∞';
+    font-size: 75px;
+    line-height: 0;
+    margin-left: 20px;
+    vertical-align: middle;
+    background-color: white; /* Make the infinity symbol color white */
+  }
+  .emoji {
+    font-size: 50px;
+    line-height: 1;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .patient-emoji { 
+    margin: 0 0 0 -120px;
+  }
+  .caption {
+    margin-top: 20px;
+    font-size: 20px;
+    color: black; /* Make this text color black to stand out on white background */
+  }
+  .nav-header {
+    background-color: #333; /* Dark background for the header */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 50px; /* Set the height of the nav header */
+    box-sizing: border-box;
+    z-index: 1000;
+  }
+  .nav-title {
+    font-size: 20px;
+    margin-left: 111px;
+  }
+  .nav-menu {
+    list-style: none;
+    display: flex;
+  }
+  .nav-menu li {
+    padding: 0 15px;
+    font-size: 16px;
+  }
+  .nav-menu li:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .content {
+    padding-top: 60px; /* Make space for fixed header */
+  }
+  .circle-section {
+    /* Your circle section styles here */
+    /* Make sure you adjust any top/bottom margins or padding as necessary */
+  }
+  .quote-container {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px; /* Add space between sections */
+  }
+  .placeholder-image {
+    flex: 0 0 50%; /* Adjust the width of the image placeholder */
+    height: 300px; /* Placeholder height */
+    background-color: #cccccc; /* Placeholder color */
+    margin-right: 20px;
+  }
+  .text-content {
+  }
+  .quote1 {
+    padding: 22px 0 0 75px;
+    max-width: 785px;
+    font-size: 42px;
+    line-height: 1.3em;
+  }
+  .quote-mark {
+    font-size: 50px;
+    vertical-align: middle;
+  }
+  .citation {
+    padding: 22px 0 0 80px;
+    max-width: 600px;
+    font-size: 14px;
+    color: #555;
+  }
+  .reference {
+    font-size: 14px;
+    color: #555;
+    text-align: right;
+  }
+
+  .grey {
+    color: grey;
+  }
+
+  hr {
+    height: 2px;
+    width: 75%;
+    color: grey;
+    background-color: grey;
+    border-radius: 2px;
+    margin: auto;
+  }
+
+  /* Add this to your <style> section */
+
+.quote-section {
+    text-align: center;
+    margin-top: 40px; /* Adjust as needed for spacing */
+  }
+  
+  .quote-mark {
+    font-size: 175px;
+    color: #444444;
+    margin-bottom: 20px;
+  }
+
+  .patient-image { 
+    height: 333px;
+    display: block;
+  }
+  .unsplash-patient { 
+    position: absolute;
+    top: 395px;
+    z-index: 1;
+    color: grey;
+    left: 520px;
+    font-size: 11px;
+
+    a {
+        color: grey;
+     }
+  }
+
+  .patient-container { 
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .quote2 {
+    font-size: 49px;
+    line-height: 1.3em;
+    color: #000;
+    margin-bottom: 20px;
+    max-width: 1011px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .logo-placeholder {
+    width: 60px;
+    height: 60px;
+    background-color: #000; /* Placeholder color */
+    display: inline-block; /* To simulate the logo image */
+    margin-right: 10px;
+  }
+  
+  .logo-text {
+    font-size: 18px;
+    color: #555;
+  }
+  
+/* Add this to your styles.css file or within the <style> section */
+
+.section {
+    text-align: center;
+    margin-top: 40px; /* Adjust as needed for spacing between sections */
+    padding: 20px;
+    background-color: #ffffff; /* Assuming white background for the quote section */
+  }
+  
+  .quote {
+    font-size: 24px;
+    margin-bottom: 20px; /* Spacing between quote and logo */
+    max-width: 800px; /* Adjust as needed based on your design */
+    margin-left: auto; /* Center quote horizontally */
+    margin-right: auto;
+    color: #000; /* Text color for the quote */
+  }
+
+/* Branding section styles */
+
+.branding {
+    text-align: center;
+    margin-top: 40px; /* Adjust as needed for spacing */
+  }
+  
+  .with-galvani-logo {
+    max-width: 175px;
+    height: auto;
+    margin-bottom: 4px;
+    border-radius: 42px;
+    border: 2px solid grey;
+    padding: 16px;
+  }
+  
+  .brand-text {
+    font-size: 18px;
+    color: #555;
+    display: block; /* This ensures the text appears below the image */
+  }
+  
+  /* Add this to your styles.css file or within the <style> section */
+
+.mlm-section {
+    text-align: center;
+    margin-top: 40px; /* Adjust as needed */
+    padding: 20px;
+    background-color: #ffffff; /* Assuming white background for the section */
+  }
+  
+  .mlm-section h2 {
+    font-size: 45px; /* Adjust size as needed */
+    color: #000; /* Title text color */
+    margin-bottom: 20px; /* Spacing after the title */
+  }
+  
+  .subtitle {
+    font-size: 20px; /* Adjust size as needed */
+    color: #666; /* Subtitle text color */
+    margin-bottom: 20px; /* Spacing after the subtitle */
+  }
+  
+  .emoji-tree-container {
+    position: relative;
+    text-align: center; /* Center the tree emoji */
+    font-size: 0; /* Remove extra space caused by inline-block */
+    margin-top: -20px; /* Adjust this as needed */
+  }
+  
+  .tree-emoji {
+    font-size: 375px;
+    display: inline-block;
+    margin: 75px auto -75px auto;
+  }
+
+  @keyframes popIn {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    80% {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+    }
+  } 
+  
+  .emoji-people {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffa500; /* Orange background */
+    border-radius: 50%; /* Circle shape */
+    /* width: 60px; */
+    /* height: 60px; */
+    width: 10vmin; /* using vmin ensures the size is relative to the smallest side of the viewport */
+    height: 10vmin;
+    padding: 10px; /* Space around emojis */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow emojis to wrap within the background circle */
+    overflow: hidden;
+    border: 3px solid darkorange;
+  }
+  .emoji-people.animate {
+    animation: popIn 2s ease-out forwards;
+  }  
+
+  .emoji-people-1 {
+    top: 33%;
+    left: 54%;
+  }
+  .emoji-people-2 {
+    top: 38%;
+    left: 40%;
+  }
+  .emoji-people-3 {
+    top: 72%;
+    left: 54%;
+  }
+  .emoji-people-4 {
+    top: 50%;
+    left: 48%;
+  }
+  .emoji-people-5 {
+    top: 70%;
+    left: 41%;
+  }
+  /* Individual emoji adjustments */
+.emoji1, .emoji2, .emoji3, .emoji4 {
+  /* ... existing styles ... */
+  font-size: 8vmin; /* scale the emoji size with the viewport */
+  position: absolute;
+  /* Use percentages to position each emoji within the .emoji-people container */
+  /* These percentages will need to be adjusted to place the emojis where you want them */
+}
+  
+  .emoji-bg {
+    background: none; /* Remove individual backgrounds */
+    position: relative;
+    width: auto;
+    height: auto;
+    font-size: 45px;
+    line-height: 1;
+    margin: 5px;
+  }
+  
+  /* Adjust individual emoji positioning if needed */
+  .emoji1 { 
+    position: absolute; 
+    top: -3px;
+    left: 12px;
+  }
+  .emoji2 { position: absolute; top: 20px; right: 35px; }
+  .emoji3 { 
+    position: absolute; 
+    bottom: 15px;
+    left: 35px;
+  }
+  .emoji4 { 
+    position: absolute; 
+    bottom: -4px;
+    right: 15px;
+   }  
+  
+  
+  .mlm-description {
+    font-size: 18px; /* Adjust size as needed */
+    color: #000; /* Text color */
+    margin-top: 60px; /* Adjust as needed based on the emoji display */
+  }
+  
+  .mlm-data-note {
+    font-size: 16px; /* Adjust size as needed */
+    color: #666; /* Text color */
+    margin-top: 20px; /* Spacing after the main description */
+  }
+  
+  /* Footer Styles */
+
+.site-footer {
+    background-color: #333; /* Dark background for footer */
+    color: white; /* Light text color for contrast */
+    text-align: center; /* Center-align the text */
+    padding: 20px 0; /* Padding above and below the text */
+    margin-top: 40px; /* Space between the content and the footer */
+    position: relative; /* Position relative to the layout */
+    bottom: 0; /* Align to the bottom of the page */
+    width: 100%; /* Ensure it spans the full width of the page */
+  }
+  
+  .footer-content p {
+    margin: 0; /* Remove default paragraph margin */
+    padding: 5px 0; /* Padding for each paragraph for spacing */
+    font-size: 14px; /* Smaller font size for footer text */
+  }
+  
+  .footer-content p:not(:last-child) {
+    border-bottom: 1px solid #444; /* Separator line for items, adjust color as needed */
+  }
+
+  #mc_embed_shell { 
+    margin: auto;
+    display: flex;
+    justify-content: center;
+  }
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .nav-header {
+    height: auto;
+  }
+
+  .nav-title {
+    padding-top: 10px;
+  }
+
+  .nav-menu {
+    padding-top: 10px;
+  }
+
+  .quote1 {
+    margin: 43px auto 0 auto;
+    padding: 11px;
+  }
+
+  .satisfaction > div {
+    font-size: 20px;
+  }
+  .satisfaction > div:not(:last-child):after {
+    font-size: 42px;
+  }
+
+  .caption {
+    font-size: 16px;
+  }
+
+  .circle {
+    width: 300px;
+    height: 300px;
+  }
+
+  .mobile-hide {
+    display: none;
+  }
+
+  .patient-container, .quote-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .patient-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .text-content {
+    margin-top: 20px;
+  }
+
+  .mlm-section h2 {
+    font-size: 30px;
+  }
+
+  .mlm-section .subtitle {
+    font-size: 16px;
+  }
+
+  .tree-emoji {
+    font-size: 150px;
+    margin: 5px auto -75px auto;
+  }
+
+  .emoji-people {
+    display: none;
+    width: 7vmin;
+    height: 7vmin;
+    padding: 5px;
+  }
+
+  .emoji1, .emoji2, .emoji3, .emoji4 {
+    font-size: 10vmin;
+  }
+
+  .emoji-bg {
+    font-size: 22px;
+    display: none;
+  }
+
+  .mlm-description, .mlm-data-note {
+    font-size: 14px;
+  }
+
+  .footer-content p {
+    font-size: 12px;
+  }
+
+  /* Adjust the Mailchimp signup form as needed */
+  #mc_embed_signup {
+    padding: 0 20px;
+    justify-content: center;
+    margin: auto;
+    display: flex;
+  }
+}
+/* 
+@media (max-width: 480px) {
+  .emoji-people {
+    width: 18vmin;
+    height: 18vmin;
+  }
+
+  .emoji1, .emoji2, .emoji3, .emoji4 {
+    font-size: 12vmin;
+  }
+
+
+} */
