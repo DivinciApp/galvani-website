@@ -5,8 +5,9 @@ body {
     font-family: 'Montserrat', sans-serif;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    width: 100vw;
     margin: 0;
+    overflow-y: hidden;
   }
   .galvani-header-logo {
     width: 86px;
@@ -437,6 +438,10 @@ body {
     justify-content: center;
   }
 
+  .mobile-only {
+    display: none;
+  }
+
 /* Mobile styles */
 @media (max-width: 768px) {
   .nav-header {
@@ -454,22 +459,46 @@ body {
   .quote1 {
     margin: 43px auto 0 auto;
     padding: 11px;
+    font-size: 31px;
   }
 
   .satisfaction > div {
-    font-size: 20px;
+    /* font-size: 20px; */
+    margin: 0px -15px 0px auto;
   }
   .satisfaction > div:not(:last-child):after {
+    content: "";
     font-size: 42px;
+  }
+  .patient-emoji {
+    margin: 0 0 0 -27px;
+  }
+
+  .quote2 {
+    font-size: 33px;
+    margin-top: 80px;
   }
 
   .caption {
     font-size: 16px;
+
+    span.grey {
+      font-size: 24px;
+      background: white;
+      padding: 0px;
+    }
+  }
+  .citation {
+    padding: 35px;
   }
 
   .circle {
     width: 300px;
     height: 300px;
+  }
+
+  .mobile-only {
+    display: block;
   }
 
   .mobile-hide {
