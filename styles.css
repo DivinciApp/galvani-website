@@ -5,7 +5,6 @@ body {
     font-family: 'Montserrat', sans-serif;
     justify-content: center;
     align-items: center;
-    width: 100vw;
     margin: 0;
     overflow-x: clip;
   }
@@ -25,13 +24,52 @@ body {
     text-align: center;
     margin-top: 275px;  
   }
+  /* Define the rotation keyframes */
+  @keyframes rotate-around-circle {
+    from {
+      transform: rotate(0deg) translate(-50%, -50%);
+    }
+    to {
+      transform: rotate(360deg) translate(-50%, -50%);
+    }
+  }
+  /* Position the wrappers absolutely around the circle */
+  .satisfaction-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the wrapper on the circle */
+    width: 245px;
+    height: 245px;
+  }
+  /* Initial positioning of satisfaction blocks */
+  .patient-wrapper {
+    transform-origin: bottom;
+    animation: rotate-patient 20s linear infinite; /* Adjust time as needed */
+  }
+
+  .physician-wrapper {
+    transform-origin: top;
+    animation: rotate-physician 20s linear infinite; /* Adjust time as needed */
+  }
+
+  /* Keyframes for rotation */
+  @keyframes rotate-patient {
+    0% { transform: translate(-50%, -100%) rotate(0deg); }
+    100% { transform: translate(-50%, -100%) rotate(360deg); }
+  }
+
+  @keyframes rotate-physician {
+    0% { transform: translate(-50%, 0%) rotate(0deg); }
+    100% { transform: translate(-50%, 0%) rotate(-360deg); }
+  }
   .correlated {
     height: 404px;
     width: 100%;
     display: block;
   }
   .circle {
-    position: absolute;
+    position: relative;
     width: 400px; /* Adjust size as needed */
     height: 400px; /* Adjust size as needed */
     background-color: transparent;
@@ -42,34 +80,47 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
   }
+  .infinity-symbol {
+    font-size: 62px;
+    line-height: 1px;
+  }
   .satisfaction {
-    position: relative;
-    display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 32px;
-    background-color: white; /* Make the text color white */
-    z-index: 1;
+    position: absolute;
+    background-color: #fbfbfb;
+    border-radius: 50%;
+    transform-origin: center;
+    background-color: white;
+    padding: 21px;
   }
   .satisfaction > div {
-    margin: 0px -15px 0px 22px;
+    margin: 0px 28px;
   }
-  .satisfaction > div:not(:last-child):after {
-    content: '∞';
-    font-size: 75px;
-    line-height: 0;
-    margin-left: 20px;
-    vertical-align: middle;
-    background-color: white; /* Make the infinity symbol color white */
+  .patient-satisfaction {
+    top: -20px; /* Adjust this value based on the size of the circle */
+    animation: counter-rotate 20s linear infinite;
+  }
+  
+  .physician-satisfaction {
+    bottom: -20px; /* Adjust this value based on the size of the circle */
+    animation: counter-rotate-physician 20s linear infinite;
+  }
+  
+  /* Counter rotate the blocks */
+  @keyframes counter-rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(-360deg); }
+  }
+  
+  @keyframes counter-rotate-physician {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
   }
   .emoji {
     font-size: 50px;
     line-height: 1;
     display: block;
-    margin-bottom: 10px;
-  }
-  .patient-emoji { 
-    margin: 0 0 0 -120px;
   }
   .caption {
     margin-top: 20px;
@@ -109,10 +160,6 @@ body {
   .content {
     padding-top: 60px; /* Make space for fixed header */
   }
-  .circle-section {
-    /* Your circle section styles here */
-    /* Make sure you adjust any top/bottom margins or padding as necessary */
-  }
   .quote-container {
     display: flex;
     align-items: center;
@@ -125,8 +172,6 @@ body {
     height: 300px; /* Placeholder height */
     background-color: #cccccc; /* Placeholder color */
     margin-right: 20px;
-  }
-  .text-content {
   }
   .quote1 {
     padding: 22px 0 0 75px;
@@ -182,10 +227,10 @@ body {
   }
   .unsplash-patient { 
     position: absolute;
-    top: 395px;
+    top: 406px;
     z-index: 1;
     color: grey;
-    left: 520px;
+    left: 535px;
     font-size: 11px;
 
     a {
@@ -233,7 +278,6 @@ body {
 
 .section {
     text-align: center;
-    margin-top: 40px; /* Adjust as needed for spacing between sections */
     padding: 20px;
     background-color: #ffffff; /* Assuming white background for the quote section */
   }
@@ -251,7 +295,7 @@ body {
 
 .branding {
     text-align: center;
-    margin-top: 40px; /* Adjust as needed for spacing */
+    margin: 0 0 35px 0;
   }
   
   .with-galvani-logo {
@@ -444,6 +488,14 @@ body {
   }
 
 /* Mobile styles */
+@media screen and (max-width: 900px) {
+  .patient-container, .quote-container {
+    flex-direction: column;
+  }
+  .max-900-hide {
+    display: none;
+  }
+}
 @media (max-width: 768px) {
   .nav-header {
     height: auto;
@@ -468,19 +520,17 @@ body {
   }
 
   .satisfaction > div {
-    /* font-size: 20px; */
-    margin: 0px -15px 0px auto;
+    margin: 0px -25px 0px 158px;
+    background-color: white;
   }
   .satisfaction {
     font-size: 22px;
     width: 377px;
   }
   .satisfaction > div:not(:last-child):after {
+    display: none;
     content: "";
     font-size: 42px;
-  }
-  .patient-emoji {
-    margin: 0 0 0 -27px;
   }
 
   .quote2 {
@@ -508,11 +558,6 @@ body {
 
   .mobile-hide {
     display: none;
-  }
-
-  .patient-container, .quote-container {
-    flex-direction: column;
-    text-align: center;
   }
 
   .patient-image {
