@@ -213,10 +213,18 @@ body {
   .nav-title {
     font-size: 20px;
     margin-left: 111px;
+
+    a {
+      color: white;
+    }
   }
   .nav-menu {
     list-style: none;
     display: flex;
+
+    a {
+      color: white;
+    }
   }
   .nav-menu li {
     padding: 0 15px;
