@@ -45,23 +45,13 @@ body {
   /* Initial positioning of satisfaction blocks */
   .patient-wrapper {
     transform-origin: bottom;
-    animation: rotate-patient 20s linear infinite; /* Adjust time as needed */
+    animation: rotate-satisfaction 20s linear infinite; /* Adjust time as needed */
   }
 
   .physician-wrapper {
-    transform-origin: top;
-    animation: rotate-physician 20s linear infinite; /* Adjust time as needed */
-  }
-
-  /* Keyframes for rotation */
-  @keyframes rotate-patient {
-    0% { transform: translate(-50%, -100%) rotate(0deg); }
-    100% { transform: translate(-50%, -100%) rotate(360deg); }
-  }
-
-  @keyframes rotate-physician {
-    0% { transform: translate(-50%, 0%) rotate(0deg); }
-    100% { transform: translate(-50%, 0%) rotate(-360deg); }
+    width: 555px;
+    transform-origin: bottom;
+    animation: rotate-satisfaction 20s linear infinite; /* Reverse direction */
   }
   .correlated {
     height: 404px;
@@ -80,11 +70,72 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
   }
+  .infinity-with-emoji {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 108%;
+    flex-direction: column; /* Align the emoji above the symbol */
+    position: relative;
+
+    .emoji {
+      font-size: 90px;
+      z-index: 1;
+    }
+  }
   .infinity-symbol {
-    font-size: 62px;
+    color: #ffffffe6;
+    margin-top: -33px;
+    font-size: 222px;
     line-height: 1px;
+    animation: counter-rotate-physician 20s linear infinite;
+    position: absolute;
+    z-index: -1;
+  }
+  .infinity-bg {
+    background: #808080eb;
+    border-radius: 50%;
+    padding: 25px;
+    height: 111px;
+    width: 111px;
+    position: absolute;
+    z-index: -2;
+    top: 76px;
+    border: 3px solid #ffffff3d;
+  }
+  .infinity-bg-2 {
+    top: 145px;
+  }
+  .infinity-bg-3 {
+    top: 200px;
+  }
+  .infinity-bg-4 {
+    left: 80px;
+    top: 137px;
+  }
+  .infinity-bg-5 {
+    top: 96px;
+    left: 94px;
+  }
+  .infinity-bg-6 {
+    top: 96px;
+    right: 94px;
+  }
+  .infinity-bg-7 {
+    top: 190px;
+    right: 100px;
+  }
+  .infinity-bg-8 {
+    top: 137px;
+    right: 80px;
+    z-index: -3;
+  }
+  .infinity-bg-9 {
+    top: 190px;
+    left: 100px;
   }
   .satisfaction {
+    display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
@@ -93,6 +144,12 @@ body {
     transform-origin: center;
     background-color: white;
     padding: 21px;
+    transform-origin: center;
+    width: 145px;
+    height: 145px;
+    animation: counter-rotate 20s linear infinite;
+    flex-direction: column;
+    /* border: 3px solid black; */
   }
   .satisfaction > div {
     margin: 0px 28px;
@@ -103,8 +160,19 @@ body {
   }
   
   .physician-satisfaction {
-    bottom: -20px; /* Adjust this value based on the size of the circle */
-    animation: counter-rotate-physician 20s linear infinite;
+    bottom: -260px;
+    left: 185px;
+    /* animation: counter-rotate-physician 20s linear infinite; */
+    animation: counter-rotate 20s linear infinite;
+  }
+
+  @keyframes rotate-satisfaction {
+    0% {
+      transform: translate(-50%, -100%) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -100%) rotate(360deg);
+    }
   }
   
   /* Counter rotate the blocks */
@@ -124,8 +192,9 @@ body {
   }
   .caption {
     margin-top: 20px;
-    font-size: 20px;
+    font-size: 35px;
     color: black; /* Make this text color black to stand out on white background */
+    margin-top: -133px;
   }
   .nav-header {
     background-color: #333; /* Dark background for the header */
@@ -487,6 +556,16 @@ body {
     display: none;
   }
 
+  #mc_embed_signup {
+    padding: 0 20px;
+    justify-content: center;
+    margin: auto;
+    display: flex;
+  }
+  #mc-embedded-subscribe { 
+    width: 100%;
+  }
+
 /* Mobile styles */
 @media screen and (max-width: 900px) {
   .patient-container, .quote-container {
@@ -514,7 +593,7 @@ body {
   }
 
   .quote1 {
-    margin: 43px auto 0 auto;
+    margin: 75px auto 0 auto;
     padding: 11px;
     font-size: 31px;
   }
@@ -525,7 +604,6 @@ body {
   }
   .satisfaction {
     font-size: 22px;
-    width: 377px;
   }
   .satisfaction > div:not(:last-child):after {
     display: none;
@@ -545,6 +623,11 @@ body {
   }
   .citation {
     padding: 35px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  .reference {
+    width: 84%;
   }
 
   .circle {
@@ -593,6 +676,10 @@ body {
     font-size: 10vmin;
   }
 
+  .emoji {
+    font-size: 45px;
+  }
+
   .emoji-bg {
     font-size: 22px;
     display: none;
@@ -606,12 +693,8 @@ body {
     font-size: 12px;
   }
 
-  /* Adjust the Mailchimp signup form as needed */
-  #mc_embed_signup {
-    padding: 0 20px;
-    justify-content: center;
-    margin: auto;
-    display: flex;
+  .infinity-symbol {
+    color: #000000cc;
   }
 }
 /* 
