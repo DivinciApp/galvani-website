@@ -209,6 +209,10 @@ body {
     height: 50px; /* Set the height of the nav header */
     box-sizing: border-box;
     z-index: 1000;
+
+    a {
+      color: white;
+    }
   }
   .nav-title {
     font-size: 20px;
