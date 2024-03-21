@@ -158,14 +158,13 @@ body {
     margin: 0px 28px;
   }
   .patient-satisfaction {
-    top: -20px; /* Adjust this value based on the size of the circle */
+    top: -20px;
     animation: counter-rotate 20s linear infinite;
   }
   
   .physician-satisfaction {
     bottom: -260px;
-    left: 185px;
-    /* animation: counter-rotate-physician 20s linear infinite; */
+    left: 225px;
     animation: counter-rotate 20s linear infinite;
   }
 
