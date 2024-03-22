@@ -679,6 +679,7 @@ body {
       font-size: 22px;
       width: 82%;
     }
+  }
   .nav-header {
     height: auto;
   }
@@ -743,7 +744,7 @@ body {
   }
 
   .mobile-hide {
-    display: none;
+    display: none !important;
   }
 
   .patient-image {
@@ -800,16 +801,3 @@ body {
     color: #000000cc;
   }
 }
-/* 
-@media (max-width: 480px) {
-  .emoji-people {
-    width: 18vmin;
-    height: 18vmin;
-  }
-
-  .emoji1, .emoji2, .emoji3, .emoji4 {
-    font-size: 12vmin;
-  }
-
-
-} */
