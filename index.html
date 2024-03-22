@@ -31,7 +31,15 @@
   </ul>
 </div>
 <div class="content">
-  <!-- Your first section here -->
+  <div class="doctor-emoji-container">
+    <span class="doctorEmoji-bg doc-emoji-bg"></span>
+    <span id="doctorEmoji">👨‍⚕️</span>
+    <span id="robotEmoji" class="doc-emoji-bg">🤖</span>
+    <h1> Dr.You AI</h1>
+    <h4> Your practice's own Medical-Grade Language Model.</h4>
+
+  </div>
+
   <div class="correlated">
     <div class="container">
       <div class="circle">
@@ -245,6 +253,61 @@
       }
     });
   }
+
+  // const doctorEmojis = ['👨🏻‍⚕️','👨‍⚕️', '🧑🏾‍⚕️', '👩‍⚕️', '👩🏻‍⚕️', '🧑‍⚕️', '👨🏾‍⚕️', '👩🏻‍💼', '🧑🏻‍⚕️'];
+  // let currentEmojiIndex = 0;
+
+  // function changeDoctorEmoji() {
+  //   const doctorEmojiElement = document.getElementById('doctorEmoji');
+    
+  //   // Set the emoji to the current index
+  //   doctorEmojiElement.textContent = doctorEmojis[currentEmojiIndex];
+    
+  //   // Update the index, wrapping back to 0 if at the end of the array
+  //   currentEmojiIndex = (currentEmojiIndex + 1) % doctorEmojis.length;
+  // }
+
+  // Change the emoji every 3 seconds
+  // setInterval(changeDoctorEmoji, 4000);
+
+async function emojiTransitions(emojiElement, transitionTime, displayTime){
+
+  const femaleEmojis = ["👩🏻‍⚕️", "👩🏼‍⚕️", "👩🏽‍⚕️", "👩🏾‍⚕️", "👩🏿‍⚕️"];
+  const maleEmojis = ["👨🏻‍⚕️", "👨🏼‍⚕️", "👨🏽‍⚕️", "👨🏾‍⚕️", "👨🏿‍⚕️"];
+  const originalEmojis = [...femaleEmojis, ...maleEmojis];
+  var activeEmojis = [];
+
+  while(true){
+    if(activeEmojis.length === 0){
+      activeEmojis = [...originalEmojis];
+    }
+    
+
+    emojiElement.classList.add("emoji-fade-out-class");
+    await delay(transitionTime);
+    emojiElement.classList.remove("emoji-fade-out-class");
+
+    const nextEmojiIndex = Math.floor(Math.random() * activeEmojis.length);
+    const nextEmoji = activeEmojis.splice(nextEmojiIndex, 1)[0];
+    emojiElement.textContent = nextEmoji;
+
+    emojiElement.classList.add("emoji-fade-in-class");
+    await delay(transitionTime);
+    emojiElement.classList.remove("emoji-fade-in-class");
+
+    await delay(displayTime);
+  }
+  function delay(time){
+    return new Promise((res)=>{
+      setTimeout(res, time);
+    });
+  }
+}
+
+  emojiTransitions(
+    document.querySelector('#doctorEmoji'), 
+    4000,
+  );
   
   // Listen for scroll events
   window.addEventListener('scroll', runOnScroll);

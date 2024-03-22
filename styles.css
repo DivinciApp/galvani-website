@@ -24,6 +24,64 @@ body {
     text-align: center;
     margin-top: 275px;  
   }
+
+  /* Add this CSS to your styles.css for the fade effect */
+  @keyframes fadeOutIn {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  .doctor-emoji-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    flex-direction: column;
+    margin-bottom: 500px;
+
+    h1 {
+      font-size: 75px;
+      margin-top: 450px !important;
+    }
+    h4 {
+      margin-top: -25px !important;
+      font-size: 25px;
+    }
+
+    .doc-emoji-bg {
+      background-color: grey;
+      border-radius: 50%;
+    }
+    
+    .doctorEmoji-bg {
+      width: 225px;
+      height: 225px;
+      position: absolute;
+    }
+    #robotEmoji {
+      position: absolute;
+      font-size: 50px;
+      height: 70px;
+      width: 70px;
+      margin-left: 130px;
+      justify-content: center;
+      display: flex;
+      margin-top: 140px;
+    }
+
+    #doctorEmoji {
+      font-size: 175px; 
+      border-radius: 50%; 
+      width: 225px; 
+      height: 225px;
+      display: flex; 
+      justify-content: center; 
+      align-items: center;
+      animation: fadeOutIn 4s infinite;
+      position: absolute;
+    }
+  }
+
   /* Define the rotation keyframes */
   @keyframes rotate-around-circle {
     from {
