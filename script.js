@@ -30,7 +30,6 @@ async function emojiTransitions(emojiElement, displayTime){
         activeEmojis = [...originalEmojis];
       }
       
-
       const fadeOutPromise = watchForEvent(emojiElement, "animationend");
       emojiElement.classList.add("emoji-fade-out-class");
       await fadeOutPromise;

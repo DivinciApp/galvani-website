@@ -813,6 +813,7 @@ body {
   }
 
   .mlm-description, .mlm-data-note {
+    border: 0;
     font-size: 14px;
   }
 
