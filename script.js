@@ -13,8 +13,12 @@
   function runOnScroll() {
     const elements = document.querySelectorAll('.emoji-people');
     elements.forEach((el) => {
-      if (isInViewport(el) && !el.classList.contains('animate')) {
+      const inView = isInViewport(el);
+      const hasAnimate = el.classList.contains('animate');
+      if (inView && !hasAnimate) {
         el.classList.add('animate');
+      } else if(!inView && hasAnimate){
+        el.classList.remove('animate');
       }
     });
   }
@@ -75,3 +79,4 @@ return new Promise((res)=>{
   
   // Listen for scroll events
   window.addEventListener('scroll', runOnScroll);
+  
