@@ -611,6 +611,13 @@ body {
     font-size: 16px; /* Adjust size as needed */
     color: #666; /* Text color */
     margin-top: 20px; /* Spacing after the main description */
+
+    .info {
+      border-radius: 5px;
+      border: 1px solid grey;
+      padding: 0px 4px;
+      margin-right: 3px;
+    }
   }
   
   /* Footer Styles */
@@ -669,6 +676,20 @@ body {
     display: none;
   }
 }
+
+@media screen and (max-width: 900px) and (min-width: 768px) {
+  .emoji-people-5, .emoji-people-2 {
+    left: 31%;
+  }
+  .emoji-people-4 {
+    left: 45%;
+  }
+  .emoji-people-3 {
+    top: 70%;
+    left: 57%;
+  }
+}
+
 @media (max-width: 768px) {
 
   .doctor-emoji-container {
@@ -770,14 +791,17 @@ body {
   }
 
   .emoji-people {
-    display: none;
     width: 7vmin;
     height: 7vmin;
     padding: 5px;
   }
 
-  .emoji1, .emoji2, .emoji3, .emoji4 {
-    font-size: 10vmin;
+  .emoji1 {
+    top: revert;
+    left: revert;
+  }
+  .emoji2, .emoji3, .emoji4 {
+    display: none;
   }
 
   .emoji {
@@ -786,7 +810,6 @@ body {
 
   .emoji-bg {
     font-size: 22px;
-    display: none;
   }
 
   .mlm-description, .mlm-data-note {
