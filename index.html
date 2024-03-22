@@ -270,44 +270,48 @@
   // Change the emoji every 3 seconds
   // setInterval(changeDoctorEmoji, 4000);
 
-async function emojiTransitions(emojiElement, transitionTime, displayTime){
+  async function emojiTransitions(emojiElement, transitionTime, displayTime){
 
-  const femaleEmojis = ["👩🏻‍⚕️", "👩🏼‍⚕️", "👩🏽‍⚕️", "👩🏾‍⚕️", "👩🏿‍⚕️"];
-  const maleEmojis = ["👨🏻‍⚕️", "👨🏼‍⚕️", "👨🏽‍⚕️", "👨🏾‍⚕️", "👨🏿‍⚕️"];
-  const originalEmojis = [...femaleEmojis, ...maleEmojis];
-  var activeEmojis = [];
+    const emojis = [
+      "👩🏻‍⚕️", "👩🏼‍⚕️", "👩🏽‍⚕️", "👩🏾‍⚕️", "👩🏿‍⚕️",
+      "👨🏻‍⚕️", "👨🏼‍⚕️", "👨🏽‍⚕️", "👨🏾‍⚕️", "👨🏿‍⚕️"
+    ];
+    let currentEmojiIndex = 0;
 
-  while(true){
-    if(activeEmojis.length === 0){
-      activeEmojis = [...originalEmojis];
+    while(true){
+      // Set the emoji
+      emojiElement.textContent = emojis[currentEmojiIndex];
+
+      // Fade in the emoji
+      emojiElement.classList.add("emoji-fade-in-class");
+      await delay(transitionTime);
+      emojiElement.classList.remove("emoji-fade-in-class");
+
+      // Wait for the display time
+      await delay(displayTime);
+
+      // Fade out the emoji
+      emojiElement.classList.add("emoji-fade-out-class");
+      await delay(transitionTime);
+      emojiElement.classList.remove("emoji-fade-out-class");
+
+      // Move to the next emoji, go back to the start if at the end
+      currentEmojiIndex = (currentEmojiIndex + 1) % emojis.length;
     }
-    
 
-    emojiElement.classList.add("emoji-fade-out-class");
-    await delay(transitionTime);
-    emojiElement.classList.remove("emoji-fade-out-class");
-
-    const nextEmojiIndex = Math.floor(Math.random() * activeEmojis.length);
-    const nextEmoji = activeEmojis.splice(nextEmojiIndex, 1)[0];
-    emojiElement.textContent = nextEmoji;
-
-    emojiElement.classList.add("emoji-fade-in-class");
-    await delay(transitionTime);
-    emojiElement.classList.remove("emoji-fade-in-class");
-
-    await delay(displayTime);
-  }
-  function delay(time){
-    return new Promise((res)=>{
-      setTimeout(res, time);
-    });
-  }
+    function delay(time){
+      return new Promise((res) => {
+        setTimeout(res, time);
+      });
+    }
 }
 
   emojiTransitions(
     document.querySelector('#doctorEmoji'), 
-    4000,
+    1000, // Time for fade transition
+    2000  // Time to display each emoji
   );
+
   
   // Listen for scroll events
   window.addEventListener('scroll', runOnScroll);
